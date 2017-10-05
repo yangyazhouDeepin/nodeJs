@@ -1,0 +1,32 @@
+1、 每次保存后，node自动重启插件  supervisor
+使用：
+  supervisor main.js
+node的特点是异步式I/O与事件紧密结合的编程模式。
+
+2、文件读取
+  i、异步读取：      var fs = require('fs');   fs.readFile('nodejs.txt', 'UTF-8', function(err, data))
+  ii、同步读取： var fs = require('fs'); var data = fs.readFileSync('nodejs.txt', 'UTF-8');
+
+3、路径获取
+var path = require('path');
+
+__dirname :   表示当前路径
+__filename:   当前文件的路径及名称 （nodejs/lib/readFile.js）
+path.resolve('./'):  表示当前项目的根目录
+process.cwd():  当前项目根目录
+
+4、commonJs包规范
+  package.json必须在顶层目录
+  二进制文件应该在bin目录下
+  javascript代码应该在lib目录下
+  文档在doc目录下
+  单元测试应该在test目录下
+
+5、event 事件
+  var EventEmitter = require('events').EventEmitter;
+  var event = new EventEmitter();
+
+  event.on('some_event', function(){.....});
+  event.emit('some_event');
+
+6、
